@@ -1,0 +1,6 @@
+<section class="users__section--wrapper">
+    <div>
+        <app-user-card *ngFor="let user of users;let ind=index" [userData]="user" (click)="gotoUserList(user, ind)"></app-user-card>
+    </div>
+    <p-paginator [rows]="10" [totalRecords]="totalPages" (onPageChange)="paginate($event)"></p-paginator>
+</section>
