@@ -10,6 +10,7 @@ import { HttpPayload, HttpService } from 'src/app/common/services/http.service';
 export class UserDetaisComponent implements OnInit {
   userDetails: any = {};
   userId = '';
+  isPrime = true;
 
   constructor(private http: HttpService, private aRoute: ActivatedRoute) { }
 
@@ -30,6 +31,15 @@ export class UserDetaisComponent implements OnInit {
       console.log(res, 'reponsesesse');
       this.userDetails = res.data;
     });
+  }
+
+  checkUserHasPrimeId(num: number): void {
+    for (let iter = 2; iter < (num / 2); iter++) {
+      if (num % iter === 0) {
+        this.isPrime = false;
+        break;
+      }
+    }
   }
 
 }

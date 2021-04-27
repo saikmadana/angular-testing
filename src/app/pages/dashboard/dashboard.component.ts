@@ -12,8 +12,12 @@ export class DashboardComponent implements OnInit {
   constructor(private http: HttpService) { }
 
   ngOnInit(): void {
+    this.getDashboardUsers();
+  }
+
+  getDashboardUsers(): void {
     const req: HttpPayload = {
-      url: '/users?page=2',
+      url: 'users',
       method: 'get'
     };
     this.http.callApi(req).subscribe((res) => {

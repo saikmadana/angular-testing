@@ -36,5 +36,5 @@ export class UsersComponent implements OnInit {
 
   paginate(event: any): void {
     this.getUserList(event.page + 1);
-}
+  }
 }

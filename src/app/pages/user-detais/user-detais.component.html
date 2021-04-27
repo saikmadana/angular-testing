@@ -6,4 +6,8 @@
         <div>{{userDetails.first_name}}</div>
         <div>{{userDetails.last_name}}</div>
     </div>
+    <div>
+        <div *ngIf="isPrime;else not_prime" >Has Prime Id</div>
+        <ng-template #not_prime>Not a Prime</ng-template>
+    </div>
 </section>
